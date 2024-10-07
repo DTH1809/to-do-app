@@ -27,10 +27,6 @@ const UpdateForm = ({ taskData }) => {
                         toast.success("Success updating task", { position: "top-center" })
                         router.push("/")
                 })
-                .catch((error) => {
-                        console.log("Error updating task", error)
-                        toast.error("Error updating task", { position: "top-center" })
-                })
         });
     } 
 

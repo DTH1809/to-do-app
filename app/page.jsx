@@ -3,7 +3,6 @@ import PageHeader from '@/components/PageHeader'
 import TaskList from '@/components/TaskList'
 import { getTasks } from '@/db/getTasks'
 
-
 const MainPage = async () => {
 
   const tasksArray = await getTasks()
