@@ -8,21 +8,44 @@ import {
     SelectTrigger,
     SelectValue,
   } from "@/components/ui/select"
+import Link from 'next/link'
+import { toast } from 'sonner'
+import { updateTaskStatus } from '@/db/updateTask'
+import { Tooltip, TooltipContent, TooltipTrigger } from './ui/tooltip'
 
 
 const TaskList = ({ tasksArray }) => {
 
     const [filter, setFilter] = useState("all")
+    const [tasks, setTasks] = useState(tasksArray)
 
     const handleFilterChange = (value) => {
         setFilter(value);
     }
 
-    const filteredTasks = tasksArray.filter((task) => {
+    const filteredTasks = tasks.filter((task) => {
         if (filter === "completed") return task.status === "completed"
         if (filter === "incomplete") return task.status === "incomplete"
         return true
     })
+
+    const handleUpdateStatus = async (id, status) => {
+        const updatedStatus = status === "completed" ? "incomplete" : "completed"
+        try {
+            console.log("Updating")
+            await updateTaskStatus(id, updatedStatus)
+
+            setTasks(prevTasks =>
+                prevTasks.map(task =>
+                    task.id === id ? { ...task, status: updatedStatus } : task
+                )
+            )
+
+            toast.success("Task status updated!", { position: "top-center" })
+        } catch (error) {
+            toast.error("Error when update task status", { position: "top-center" })
+        }
+    }
 
   return (
     <div className="w-full lg:w-1/2 flex items-center justify-center h-full p-2">
@@ -48,10 +71,30 @@ const TaskList = ({ tasksArray }) => {
                 {filteredTasks.map((task, i) => (
                     <li className="w-full flex justify-center items-center" key={task.id}>
                         <div className="flex justify-between items-center p-2 gap-x-4">
-                            <p className="text-white font-semibold text-lg">
-                                {task.name}
-                            </p>
-                            <Checkbox checked={task.status === "completed"} />
+                            <Link href={`/task/${task.id}`}>
+                            <Tooltip>
+                                <TooltipTrigger >
+                                    <p className="text-white font-semibold text-lg hover:text-blue-600">
+                                        {task.name}
+                                    </p>                
+                                </TooltipTrigger>
+                                <TooltipContent>
+                                    <p className="text-white">
+                                        Update Task
+                                    </p>
+                                </TooltipContent>
+                            </Tooltip>
+                            </Link>
+                            <Tooltip>
+                                <TooltipTrigger >
+                                    <Checkbox checked={task.status === "completed"} onClick={() => handleUpdateStatus(task.id, task.status)} />              
+                                </TooltipTrigger>
+                                <TooltipContent>
+                                    <p className="text-white">
+                                        Update Task Status
+                                    </p>
+                                </TooltipContent>
+                            </Tooltip>
                         </div>
                     </li>
                 ))}
