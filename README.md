@@ -10,6 +10,6 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 Then run ```npm run db``` to start json server database on [http://localhost3001](http://localhost:3001)
 
-You can modify db.json file to directly change database, after refresh your app because i get data in a component server
+You can modify db.json file to directly change database, after refresh your app because i get data in a component server. If you need data to test, you can copy dbtest.json into db.json
 
 
