@@ -25,8 +25,8 @@ const TaskList = ({ tasksArray }) => {
     })
 
   return (
-    <div className="w-1/2 flex items-center justify-center h-full">
-        <div className="flex flex-col justify-center items-center p-10 bg-yellow-600 rounded-xl">
+    <div className="w-full lg:w-1/2 flex items-center justify-center h-full p-2">
+        <div className="flex flex-col justify-center items-center lg:p-10 p-5 bg-yellow-600 rounded-xl">
             <header className="mb-10">
                 <h1 className="text-xl font-semibold text-white uppercase">
                     Your Tasks
@@ -47,8 +47,8 @@ const TaskList = ({ tasksArray }) => {
             <ul className="flex-1">
                 {filteredTasks.map((task, i) => (
                     <li className="w-full flex justify-center items-center" key={task.id}>
-                        <div className="flex justify-between items-center p-2 gap-x-2">
-                            <p className="text-white">
+                        <div className="flex justify-between items-center p-2 gap-x-4">
+                            <p className="text-white font-semibold text-lg">
                                 {task.name}
                             </p>
                             <Checkbox checked={task.status === "completed"} />

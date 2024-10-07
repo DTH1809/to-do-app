@@ -9,9 +9,9 @@ const MainPage = async () => {
   const tasksArray = await getTasks()
 
   return (
-    <div className="w-full h-full flex flex-col items-center justify-center bg-neutral-900 p-2 px-10">
+    <div className="w-full h-full flex flex-col items-center justify-center p-2 lg:px-10">
       <PageHeader />
-      <main className="w-full h-full flex items-center justify-center flex-1">
+      <main className="w-full h-full flex flex-col lg:flex-row items-center justify-center flex-1 gap-y-2">
         <InputForm />
         <TaskList tasksArray={tasksArray} />
       </main>

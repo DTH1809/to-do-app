@@ -30,10 +30,10 @@ const InputForm = () => {
     }
 
   return (
-    <div className="w-1/2 flex flex-col items-center justify-center">
-        <div className="bg-purple-600 p-10 flex flex-col items-center justify-center rounded-xl">
+    <div className="w-full lg:w-1/2 flex flex-col items-center justify-center">
+        <div className="bg-purple-600 lg:p-10 p-5 flex flex-col items-center justify-center rounded-xl">
             <header className="mb-10">
-                <h1 className="text-white text-xl font-semibold uppercase">
+                <h1 className="text-white text-xl font-semibold uppercase text-center">
                     Add your task
                 </h1>
             </header>
