@@ -20,6 +20,11 @@ const UpdateForm = ({ taskData }) => {
             toast("Task name not change", { position: "top-center" })
             return
         }
+        if(taskName === "") {
+            e.preventDefault()
+            toast("Task name can not empty", { position: "top-center" })
+            return
+        }
         startTransition(async () => {
             await updateTaskName(taskData.id, taskName)
                 .then((data) => {
@@ -31,14 +36,14 @@ const UpdateForm = ({ taskData }) => {
     } 
 
   return (
-    <div className="w-full lg:w-1/2 flex flex-col items-center justify-center">
-        <div className="bg-purple-600 lg:p-10 p-5 flex flex-col items-center justify-center rounded-xl">
+    <div className="w-full flex flex-col items-center justify-center">
+        <div className="bg-purple-600 lg:p-10 p-5 flex flex-col items-center justify-center rounded-xl ">
             <header className="mb-10">
                 <h1 className="text-white text-xl font-semibold uppercase text-center">
                     Update Task Content
                 </h1>
             </header>
-            <form className="flex flex-col gap-y-3">
+            <form className="flex flex-col gap-y-3 p-2 w-full">
                 <Input 
                     type="text" 
                     placeholder="Enter name of the task" 

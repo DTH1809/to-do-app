@@ -11,7 +11,6 @@ import {
 import Link from 'next/link'
 import { toast } from 'sonner'
 import { updateTaskStatus } from '@/db/updateTask'
-import { Tooltip, TooltipContent, TooltipTrigger } from './ui/tooltip'
 
 
 const TaskList = ({ tasksArray }) => {
@@ -54,8 +53,8 @@ const TaskList = ({ tasksArray }) => {
 
   return (
     <div className="w-full lg:w-1/2 flex items-center justify-center h-full p-2">
-        <div className="flex flex-col justify-center items-center lg:p-10 p-5 bg-yellow-600 rounded-xl">
-            <header className="mb-10">
+        <div className="flex flex-col justify-center items-center p-5 bg-yellow-600 rounded-xl lg:w-[400px] lg:h-[400px] overflow-y-auto custom-scrollbar">
+            <header className="my-10">
                 <h1 className="text-xl font-semibold text-white uppercase">
                     Your Tasks
                 </h1>
@@ -72,23 +71,16 @@ const TaskList = ({ tasksArray }) => {
                     </SelectContent>
                 </Select>
             </div>
-            <ul className="flex-1 flex items-center justify-center flex-col">
+            <ul className="flex-1 flex items-center justify-center flex-col w-full gap-y-2">
                 {filteredTasks?.map((task, i) => (
                     <li className="w-full lg:max-w-[80%] flex justify-center items-center" key={task.id}>
-                        <div className="flex justify-between items-center p-2 gap-x-4">
+                        <div className="flex justify-between items-center gap-x-2 w-full">
                             <Link href={`/task/${task.id}`}>
-                                
-                                        <p className="text-white font-semibold text-lg hover:text-blue-600">
-                                            {task.name}
-                                        </p>                
-                                    
-                            
-                                   
+                                <p className="text-white font-semibold text-lg hover:text-blue-600 text-pretty">
+                                    {task.name}
+                                </p>                 
                             </Link>
-                            
-                                    <Checkbox checked={task.status === "completed"} onClick={() => handleUpdateStatus(task.id, task.status)} />              
-                                
-                                    
+                            <Checkbox checked={task.status === "completed"} onClick={() => handleUpdateStatus(task.id, task.status)} />                 
                         </div>
                     </li>
                 ))}
