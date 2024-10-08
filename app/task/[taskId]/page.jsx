@@ -1,12 +1,11 @@
-import PageHeader from '@/components/PageHeader'
-import UpdateForm from '@/components/UpdateForm'
-import { getTaskById } from '@/db/getTaskById'
-import React from 'react'
+import PageHeader from "@/components/PageHeader";
+import UpdateForm from "@/components/UpdateForm";
+import { getTaskById } from "@/db/getTaskById";
+import React from "react";
 
 const TaskPage = async ({ params }) => {
-  const taskId = params.taskId
-  const taskData = await getTaskById(taskId)
-  console.log('task data', taskData)
+  const taskId = params.taskId;
+  const taskData = await getTaskById(taskId);
   return (
     <div className="w-full h-full flex flex-col items-center justify-center p-2 lg:px-10">
       <PageHeader text="Update Task" />
@@ -14,7 +13,7 @@ const TaskPage = async ({ params }) => {
         <UpdateForm taskData={taskData} />
       </main>
     </div>
-  )
-}
+  );
+};
 
-export default TaskPage
+export default TaskPage;

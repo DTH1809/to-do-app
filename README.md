@@ -19,3 +19,4 @@ Main feature:
 
 You can run ```npx prettier --write [file or folder name]``` to format code. You also can modify prettier by change .prettierrc file to config
 
+You can run ```npm run lint``` to detected eslint error. You can fix those error by run ```npm run lint:fix``` and you can config eslint in file .eslintre.json

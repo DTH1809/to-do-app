@@ -1,0 +1,15 @@
+{
+  "extends": ["next/core-web-vitals", "eslint:recommended"],
+  "rules": {
+    "no-unused-vars": "warn",            // Warns about unused variables
+    "no-console": "warn",                // Warns about console.log usage
+    "eqeqeq": "error",                   // Enforce strict equality
+    "curly": "error",                    // Require curly braces for all control structures
+    "semi": ["error", "always"],         // Require semicolons at the end of statements
+    "quotes": ["error", "double"],       // Enforce the use of double quotes
+    "no-undef": "error",                 // Error on the use of undeclared variables
+    "prefer-const": "error",             // Prefer `const` over `let` when variables are not reassigned
+    "indent": ["error", 2],              // Enforce consistent indentation (2 spaces)
+    "comma-dangle": ["error", "never"]   // Disallow trailing commas
+  }
+}
