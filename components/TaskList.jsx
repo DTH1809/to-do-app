@@ -76,7 +76,7 @@ const TaskList = ({ tasksArray }) => {
                     <li className="w-full lg:max-w-[80%] flex justify-center items-center" key={task.id}>
                         <div className="flex justify-between items-center gap-x-2 w-full">
                             <Link href={`/task/${task.id}`}>
-                                <p className="text-white font-semibold text-lg hover:text-blue-600 text-pretty">
+                                <p className="text-white font-semibold text-lg hover:text-blue-600 text-wrap">
                                     {task.name}
                                 </p>                 
                             </Link>

@@ -1,8 +1,13 @@
 {
   "tasks": [
     {
+      "id": "a1b3",
+      "name": "Test long sentence overflow wrap",
+      "status": "incomplete"
+    },
+    {
       "id": "a1b2",
-      "name": "Design homepage layout",
+      "name": "Design homepage layout ",
       "status": "incomplete"
     },
     {
