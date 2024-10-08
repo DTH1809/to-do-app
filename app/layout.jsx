@@ -1,22 +1,22 @@
-import localFont from "next/font/local";
-import "./globals.css";
-import { Toaster } from "@/components/ui/sonner";
+import localFont from 'next/font/local'
+import './globals.css'
+import { Toaster } from '@/components/ui/sonner'
 
 const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
+  src: './fonts/GeistVF.woff',
+  variable: '--font-geist-sans',
+  weight: '100 900',
+})
 const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+  src: './fonts/GeistMonoVF.woff',
+  variable: '--font-geist-mono',
+  weight: '100 900',
+})
 
 export const metadata = {
-  title: "To Do App",
-  description: "Manage your tasks",
-};
+  title: 'To Do App',
+  description: 'Manage your tasks',
+}
 
 export default function RootLayout({ children }) {
   return (
@@ -28,5 +28,5 @@ export default function RootLayout({ children }) {
         <Toaster />
       </body>
     </html>
-  );
+  )
 }
