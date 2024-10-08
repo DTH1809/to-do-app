@@ -17,4 +17,5 @@ Main feature:
     - List to display task from database, checkbox to indicate task status, click task name to navigate to update task page, click check box to change status of the task.
     - Update task form display the task name from database (get task data from database base on task id), text input field to change task name, button to subbmit task name change to database, button to navigate to homepage if user do not want to update task, client validation for submit when not change the task name and task name is empty.
 
+You can run ```npx prettier --write [file or folder name]``` to format code
 

@@ -1,11 +1,10 @@
-import InputForm from '@/components/InputForm'
-import PageHeader from '@/components/PageHeader'
-import TaskList from '@/components/TaskList'
-import { getTasks } from '@/db/getTasks'
+import InputForm from "@/components/InputForm";
+import PageHeader from "@/components/PageHeader";
+import TaskList from "@/components/TaskList";
+import { getTasks } from "@/db/getTasks";
 
 const MainPage = async () => {
-
-  const tasksArray = await getTasks()
+  const tasksArray = await getTasks();
 
   return (
     <div className="w-full h-full flex flex-col items-center justify-center p-2 lg:px-10">
@@ -15,7 +14,7 @@ const MainPage = async () => {
         <TaskList tasksArray={tasksArray} />
       </main>
     </div>
-  )
-}
+  );
+};
 
-export default MainPage
+export default MainPage;

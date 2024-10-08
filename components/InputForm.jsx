@@ -26,8 +26,8 @@ const InputForm = () => {
     }, [taskName, startTransition])
 
   return (
-    <div className="w-full lg:w-1/2 flex flex-col items-center justify-center h-full">
-        <div className="bg-purple-600 p-5 flex flex-col items-center justify-center rounded-xl lg:w-[350px] lg:h-[400px]">
+    <div className="w-full lg:w-1/2 flex flex-col items-center justify-center h-full p-2">
+        <div className="bg-purple-600 p-5 flex flex-col items-center justify-center rounded-xl lg:w-[350px] lg:h-[400px] w-full">
             <header className="mb-10">
                 <h1 className="text-white text-xl font-semibold uppercase text-center">
                     Add your task
